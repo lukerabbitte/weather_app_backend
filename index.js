@@ -9,9 +9,8 @@ const OPENWEATHERMAP_GEOCODING_API = 'http://api.openweathermap.org/geo/1.0/dire
 
 app.use(express.json())
 
+// Accepts request from any server
 app.use(cors({
-    //origin: 'http://your-frontend-server.com',
-    //optionsSuccessStatus: 200
 }));
 
 app.listen(
