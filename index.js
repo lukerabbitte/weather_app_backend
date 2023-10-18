@@ -28,11 +28,8 @@ app.get('/tshirt', (req, res) => {
 // Get coordinates based on city name
 app.get('/geocoding', async (req, res) => {
     const { cityName, countryCode, limit } = req.query;
-    /*const cityName = "Dublin";
-    const countryCode = "IE";
-    const limit = 1; */
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=${limit}&appid=e689a22a0aa07bb6cfa7018f8db86a92`);
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=e689a22a0aa07bb6cfa7018f8db86a92`);
         const data = await response.json();
         res.json(data);
     } catch (error) {
@@ -43,7 +40,7 @@ app.get('/geocoding', async (req, res) => {
 app.get('/weather', async (req, res) => {
     const { lat, lon } = req.query;
     try {
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=${limit}&appid=e689a22a0aa07bb6cfa7018f8db86a92`);
+        const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${limit}&appid=e689a22a0aa07bb6cfa7018f8db86a92`);
         const data = await response.json();
         res.json(data);
     } catch (error) {
