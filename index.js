@@ -16,13 +16,6 @@ app.listen(
     () => console.log(`Server active on http://localhost:${PORT}`)
 )
 
-app.get('/tshirt', (req, res) => {
-    res.status(200).send({
-        tshirt: 'green crewneck',
-        size: "large"
-    });
-});
-
 // Get coordinates based on city name
 app.get('/geocoding', async (req, res) => {
     const { cityName, limit } = req.query;
