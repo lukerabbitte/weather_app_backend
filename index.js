@@ -52,6 +52,7 @@ app.get('/air_pollution', async (req, res) => {
     }
 });
 
+// Get the first page of results from a Unsplash search of `${city} city`
 app.get('/unsplash_photos', async (req, res) => {
     const { city } = req.query;
     try {
@@ -62,4 +63,3 @@ app.get('/unsplash_photos', async (req, res) => {
         res.status(500).json({ error: 'An error occurred while fetching unsplash data.' });
     }
 })
-
