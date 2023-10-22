@@ -7,8 +7,11 @@ const PORT = 8080;
 
 app.use(express.json())
 
-// Accepts request from any server
+// Accept requests from frontend server only
+const allowedOrigin = 'http://127.0.0.1:5173';
+
 app.use(cors({
+    origin: allowedOrigin,
 }));
 
 app.listen(
